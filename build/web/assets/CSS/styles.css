@@ -1,0 +1,681 @@
+/*
+Fonts
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+/* 
+Variables
+*/
+:root{
+    /* Colors */
+    --ColorWhite: #ffffff;
+    --ColorBGMain: #f6f8fe;
+    --ColorGrey: #d8dde8;
+    --ColorYellow: #faeecf;
+    --ColorPink: #f2d0de;
+    --ColorBlue: #96baec;
+    /* BTN Colors */
+    --FontColorBlack: #0d0c21;
+    --FontColorDark: #777b80;
+    --FontColorLight: #cdcfd4;
+    --FontColorWhite: #ffffff;
+    --FontColorPink: #d85888;
+    /* Font Colors */
+    --BtnColorPrimary: #f2d0de;
+    --BtnColorSecondary: #faeecf;     
+    /* Others */
+    --MainTrans: 0.3s linear all;
+}
+/* 
+Globals
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;        
+}
+body {    
+    background: var(--ColorBGMain);   
+
+}
+.section {
+    width: 100vw;
+    min-height: 100vh; 
+}
+.main-sect{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    width: 100%;
+}
+.section-title {
+    text-align: center;
+    font-size: 1.55rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    color: var(--FontColorBlack); 
+}
+.section-title-underline {
+    width: 100%;
+    height: 1px;
+    background-color: var(--ColorGrey);
+    opacity: 0.7;
+    margin:0 auto;    
+}
+ul {
+    list-style: none;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.formBtn {
+    outline: none;
+    border: none;
+    background-color: var(--ColorYellow);
+    border-radius: 0.25rem;
+    padding: 0.65rem 1.1rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--MainTrans);
+}
+.formBtn:hover {
+    box-shadow: 0px 2px 5px rgba(50,50,50,0.2);
+    transition: var(--MainTrans);
+}
+.cancelBtn {
+    background-color: var(--ColorPink);
+    transition: var(--MainTrans);
+}
+
+
+/***************************** 
+******** Login Screen ********
+******************************/
+.login-sect {
+    height: 100vh;
+}
+.loginElements-center {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.login-errorMsg {
+    color: red;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    text-align: center;
+}
+.login-formContainer > form {
+    background: var(--ColorWhite);
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    border-radius: 1.3rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.login-formTitle {
+    text-align: center;
+    color: blue;
+    font-size: 1.2rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    background-color: yellowgreen;  
+    border-top-right-radius: 1.3rem;
+    border-top-left-radius: 1.3rem;
+    padding: 2rem 0rem;
+}
+.login-formContent {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+    gap: 0rem;
+    margin-bottom: 1rem;
+    width: 25rem;
+    color: burlywood;
+}
+.login-formInputs{
+    margin-top: 2rem;
+}
+.login-singleInput {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-singleInput > input {
+    outline: 0;
+    border-width: 0 0 1.5px;
+    border-color: var(--ColorPink);
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: var(--MainTrans);
+}
+.login-singleInput > input:focus {
+    border-color: var(--ColorBlue);
+}
+.login-formButtons{
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+/***************************** 
+********* Navigation *********
+******************************/
+.navigationContainer {
+    width: 100%;
+    height: 5rem;
+    background-color: var(--ColorWhite);
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.25);
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+}
+.navigationCenter {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-logoContainer{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.nav-links {
+    display: flex;    
+}
+.nav-singleLink {
+    margin-left: 1rem;
+    letter-spacing: 0.85px;
+    font-size: 1rem;
+}
+.singleLink-logout{
+    color: black;
+    font-weight: bold;
+}
+.nav-linkActivo {
+    color: var(--ColorBlue);
+    font-weight: bold;      
+}
+
+/***************************** 
+******* Dashboard Page *******
+******************************/
+.hab-welcomeSect {
+    text-align: center;
+    font-size: 0.85rem;
+    padding-top: 2rem;    
+    margin-bottom: 2rem;
+    letter-spacing: 1.1px;
+}
+.hab-welcomeSect > h1 > span {
+    color: var(--FontColorDark);
+    font-weight: bold;
+}
+.hab-cardsContainer {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hab-cardContainer {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    place-items: center;
+    width: 45rem;
+    height: 13.5rem;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 9px rgba(0,0,0,0.25);
+    margin-bottom: 2rem;
+}
+.hab-cardLeft{
+    width: 18rem;
+    height: 13.5rem;
+}
+.hab-cardLeft >img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+.hab-cardRight{
+    background: var(--ColorWhite);
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.hab-cardRightCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.hab-cardRight-title {
+    margin-bottom: 2.3rem;
+}
+.hab-cardRight-title > p {
+    color: var(--FontColorLight);
+    letter-spacing: 1px;
+}
+.hab-cardRight-title > h3 {
+    color: var(--FontColorBlack);
+    font-size: 1.8rem;
+    letter-spacing: 1.3px;
+    text-align: center;
+    padding: 0.3rem 0rem;
+}
+.hab-cardRight-title > h6 {
+    text-align: right;
+    color: var(--FontColorDark);
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+}
+.hab-cardRight-info {
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: space-between;
+}
+.hab-cardRight-info > p {
+    letter-spacing: 1.1px
+}
+.hab-cardRight-info > span {
+    color: var(--FontColorPink);
+    letter-spacing: 1.2px;
+}
+
+/***************************** 
+********** Reservas **********
+******************************/
+.res-formContainer{
+    display: grid;
+    place-items: center;
+    margin-top: 2rem;
+}
+.res-formContainer > form {
+    background: var(--ColorWhite);
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    border-radius: 1.3rem;
+    width: 50rem;
+}
+.res-formCenter {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2.5rem 0rem;
+}
+.res-formTitle {
+    color: var(--FontColorDark);
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.res-formTitle > p {
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-top: 0.15rem;
+    color: var(--FontColorLight);
+}
+.res-formSection{
+    margin-bottom: 2.5rem;
+}
+.res-formInputsContainer{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+.res-facturacionContainer {
+    width: 55%;    
+}
+.res-singleInput {
+    font-size: 1.5rem; 
+    position: relative;
+}
+.res-factSingleInput{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.res-factSingleInput > input {
+    outline: 0;
+    border-width: 0 0 1.5px;
+    border-color: var(--ColorPink);
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: var(--MainTrans);
+}
+.res-factSingleInput > input:focus{
+    border-color: var(--ColorBlue);
+}
+.res-factSingleInput > input::placeholder {
+    color: lightgray;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Hab TOP */
+.res-formInputsTop{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.res-fechasContainer{
+    text-align: center;
+    font-size: 1.5rem;    
+}
+.res-formBtnContainer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Date Picker */
+.datePickerBtnsContainer{
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.datePickerBtn{
+    outline: none;
+    border: none;
+    background-color: var(--ColorBlue);
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: var(--MainTrans);
+}
+.datePickerBtn::placeholder {
+    text-align: center;
+    color: white;
+}
+
+
+/***************************** 
+******* Empleados Page *******
+******************************/
+.emp-mainCenter {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+.emp-currentSession{
+    text-align: center;
+    font-size: 0.85rem;
+    padding-top: 1.5rem;    
+    margin-bottom: 2rem;
+    letter-spacing: 1.1px;
+}
+.emp-currentSession > h1 > span {
+    color: var(--FontColorDark);
+    font-weight: bold;
+}
+.emp-addEmpContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*ADD EMPLEADO FORM*/
+.emp-addEmpHiddenForm {
+    display: none;    
+    place-items: center;
+    margin-top: 2rem;
+    transition: var(--MainTrans);
+}
+.emp-addEmpHiddenForm > form {
+    background: var(--ColorWhite);
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    border-radius: 1.3rem;
+    width: 50rem;
+}
+.emp-addEmpFormBtns{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+    margin: 0 auto;
+}
+/*TABLE*/
+.emp-tableContainer{
+    width: 100%;
+    margin-top: 2rem;
+    display: grid;
+    place-items: center;
+}
+.emp-tableContainer > table {
+    width: 85%;
+    text-align: center;
+    box-shadow: 0px 4px 9px rgba(0,0,0,0.25);
+    border-radius: 1rem;
+    border-collapse: collapse;
+    overflow: hidden;
+    background-color: var(--ColorWhite);
+}
+.emp-tableContainer > table > thead {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.emp-tableContainer > table > thead > tr > th {
+    background-color: var(--ColorWhite);
+    padding: 1.5rem 0rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: 1px solid #dddddd;
+}
+.emp-tableContainer > table > tbody > tr > td{
+    border: 1px solid #dddddd;
+    padding: 1rem 0.4rem;
+}
+.emp-tableContainer > table > tbody > tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.emp-tableContainer > table > tbody > tr:hover {
+    background-color: #dddddd;
+}
+.emp-tableIconsContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.emp-tableIcon {
+    width: 1.5rem;
+    cursor: pointer; 
+    transition: var(--MainTras);
+}
+
+/**** MODAL ****/
+.emp-Modal {
+    display: none;
+    place-items: center;
+    position: fixed; 
+    z-index: 100000; 
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);
+    transition: var(--MainTrans);
+}
+.modal-content{
+    width: 35rem;
+    height: 20rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    border-radius: 2rem;
+    box-shadow: 0px 4px 10px rgba(255,255,255,0.2);
+}
+.modal-texts {
+    padding: 0rem 2.5rem;
+    color: var(--FontColorBlack);
+}
+.modal-texts > h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+}
+.modal-texts > h3 {
+    margin-top: 0.7rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+}
+.modal-btns{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -8rem;
+    transition: var(--MainTrans);
+}
+
+/***************************** 
+**** Confirmacion Reserva ****
+******************************/
+.res-confirmacionInputsContainer{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -0.5rem;
+}
+.res-confSingleInput{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 57%;
+    font-size: 1.05rem;
+}
+.res-confSingleInput >label {
+    color: #282828;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+}
+.res-confSingleInput > span {
+    font-size: 1.1rem;
+    color: #000000;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/***************************** 
+******** Consultas  ********
+******************************/
+.cons-filterMenu{
+    width: 75%;
+    margin: 0 auto;  
+    margin-top: 2.7rem;
+}
+.cons-filterMenu > ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.link {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: var(--FontColorDark);
+    cursor: pointer;
+    transition: var(--MainTrans);
+}
+.cons-filterMenu > ul > li:hover{
+    color: crimson;
+}
+.huesped-link:hover{
+    color: crimson;
+}
+.cons-mainScreenContainer{
+    width: 90%;
+    margin: 0 auto; 
+    margin-top: 2rem;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    padding-top: 2rem;
+}
+/****Links****/
+.cons-active{
+    color: crimson;
+}
+
+/**** Single Screen ****/
+.singleScreen-description > h1 {
+    color: var(--FontColorDark);
+    font-size: 1.7rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin-bottom: 0.35rem;
+}
+.singleScreen-description > h3{
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: darkgray;
+}
+.singleScreen-buscador{
+    width: 55%;
+    margin: 0 auto;
+    height: 12rem;
+    display: grid;
+    place-items: center;
+    margin-top: 2rem;
+}
+.singleScreen-buscador > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 80%;
+}
+.singleScreen-resultsContainer{
+    width: 85%;
+    margin: 0 auto;
+    margin-top: -1rem;
+}
+.singleScreen-resultsContainer > h2 {
+    color: var(--FontColorDark);
+    font-size: 1.7rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin: 2rem 0rem;
+}
+.buscador-notFound {
+    color: red;
+    margin-top: 2rem;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
